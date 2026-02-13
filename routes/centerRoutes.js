@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const RecycleCenter = require('../models/RecycleCenter');
 
-// GET /all - Get all recycle centers
-router.get('/all', async (req, res) => {
+// GET /nearest - Get all recycle centers
+router.get('/nearest', async (req, res) => {
     try {
         // Fetch all centers from the database
         const centers = await RecycleCenter.find({});
