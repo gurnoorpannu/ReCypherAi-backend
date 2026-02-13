@@ -4,6 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const aiRoutes = require('./routes/aiRoutes');
 const centerRoutes = require('./routes/centerRoutes');
+const mapsRoutes = require('./routes/mapsRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +30,9 @@ app.use('/api/ai', aiRoutes);
 
 // Mount center routes
 app.use('/api/centers', centerRoutes);
+
+// Mount maps routes
+app.use('/api/maps', mapsRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
