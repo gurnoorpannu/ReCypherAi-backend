@@ -14,9 +14,7 @@ router.post('/classify', async (req, res) => {
             return res.status(400).json({ error: 'Prompt is required' });
         }
 
-        // Using 'gemini-1.5-flash-latest' usually resolves 404 versioning errors
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
-
+       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
         // Generate content based on the prompt
         const result = await model.generateContent(prompt);
         const response = await result.response;

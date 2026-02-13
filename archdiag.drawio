@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-02-14T10:00:00.000Z" agent="VSCode" version="21.0.0" type="device">
+  <diagram id="CleanArchitecture" name="Mifos Architecture">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="style_straight_edge" value="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="0" height="0" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mobile_box" value="MOBILE CLIENT (KOTLIN/KMP)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=23;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="280" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="Compose UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;" vertex="1" parent="mobile_box">
+          <mxGeometry x="40" y="60" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vm" value="ViewModel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="mobile_box">
+          <mxGeometry x="40" y="140" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="Repository" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="mobile_box">
+          <mxGeometry x="40" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ktor" value="Ktor Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="mobile_box">
+          <mxGeometry x="40" y="300" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qr_cam" value="CameraX (QR)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="mobile_box">
+          <mxGeometry x="40" y="380" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="firebase" value="Firebase Auth" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gmaps" value="Google Maps API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="880" y="40" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gateway_box" value="API GATEWAY" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;startSize=23;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="bff" value="BFF Router" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="gateway_box">
+          <mxGeometry x="20" y="60" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mifos_box" value="LEGACY MIFOS CORE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;startSize=23;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="360" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="loan_engine" value="Loan Engine" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mifos_box">
+          <mxGeometry x="40" y="60" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mifos_db" value="MySQL DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="mifos_box">
+          <mxGeometry x="100" y="120" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="green_box" value="GREEN POINTS SERVICE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;startSize=23;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="120" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="points_logic" value="Points Logic" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="green_box">
+          <mxGeometry x="40" y="50" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="green_db" value="NoSQL DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="green_box">
+          <mxGeometry x="100" y="110" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="link_ui_vm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ui" target="vm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="link_vm_repo" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vm" target="repo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="link_repo_ktor" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="repo" target="ktor"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="link_ktor_bff" value="HTTPS/JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktor" target="bff"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="link_bff_green" value="QR Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bff" target="points_logic"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="link_bff_mifos" value="Loan Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bff" target="loan_engine"><mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry></mxCell>
+        
+        <mxCell id="link_green_maps" value="Verify Loc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="points_logic" target="gmaps"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="link_ktor_firebase" value="Auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.07;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ktor" target="firebase"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="360" y="320" /><mxPoint x="360" y="72" /></Array></mxGeometry></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
